@@ -1,0 +1,26 @@
+version: "3.2"
+
+services:
+
+   web:
+    image: demo_web
+    container_name: con_demo_web
+#    build:
+#        context: ./web
+   db:
+    image: demo_db
+    container_name: con_demo_db
+    volumes:
+      - "firstvolume:C:\\database"
+
+#    environment:
+#        DB_FOLDER: database
+#       - attach_dbs="[{'dbName':'AppVeyorTest','dbFiles':['C:\\\\SQLServer\\AppVeyorTest.mdf','C:\\\\\SQLServer\\\\AppVeyorTest_log.ldf']}]"
+volumes:
+  firstvolume:
+#   external: true
+#  sourcevolume:
+networks:
+  default:
+    external:
+      name: nat
